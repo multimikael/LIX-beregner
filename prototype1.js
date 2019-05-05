@@ -47,11 +47,11 @@ function getText() {
   } else if (lix >= 55) {
     info = "55 og over: <b>Meget svær, fx. faglitteratur på akademisk niveau, lovtekster.</b>";
   }
-  var html = style 
-  + "<p>Dit LIX Tal: " + lix 
-  + "</p><p>" + info 
-  + "</p><p>Antal ord: " + A 
-  + "</p><p>Antal punktummer: " + B 
-  + "</p><p>Antal lange ord (over 6 bogstaver): " + C + "</p>";
+  var html = style
+    + "<p>Dit LIX Tal: " + lix
+    + "</p><p>" + info
+    + "</p><p>Antal ord: " + A
+    + "</p><p>Antal punktummer: " + B
+    + "</p><p>Antal lange ord (over 6 bogstaver): " + C + "</p>";
   ui.showModelessDialog(HtmlService.createHtmlOutput(html), "LIX Tal");
 }
