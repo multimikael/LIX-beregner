@@ -33,6 +33,7 @@ function onOpen(e) {
     
     var lix = Math.round(A/B+(C*100)/A)
     
+    //visning
     ui.alert(lix);
   }
   
