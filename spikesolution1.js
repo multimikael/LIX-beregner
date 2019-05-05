@@ -1,7 +1,7 @@
 function onOpen(e) {
   DocumentApp.getUi().createAddonMenu()
-      .addItem('Start', 'getText')
-      .addToUi();
+    .addItem('Start', 'getText')
+    .addToUi();
 }
 
 function getText() {
@@ -10,17 +10,17 @@ function getText() {
   var ui = DocumentApp.getUi();
   var paragraphs = body.getParagraphs();
   var tables = body.getTables();
-  
+
   var text = "";
-  paragraphs.forEach(function(par) {
+  paragraphs.forEach(function (par) {
     text += par.getText() + " ";
   });
-  
-  tables.forEach(function(table) {
+
+  tables.forEach(function (table) {
     tableText = table.getText();
     tableText = tableText.split("\n").join("");
     text = text.replace(tableText, "");
   });
-  
+
   ui.alert(text);
 }

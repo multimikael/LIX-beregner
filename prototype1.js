@@ -1,7 +1,7 @@
 function onOpen(e) {
   DocumentApp.getUi().createAddonMenu()
-      .addItem('Start', 'getText')
-      .addToUi();
+    .addItem('Start', 'getText')
+    .addToUi();
 }
 
 function getText() {
@@ -10,33 +10,33 @@ function getText() {
   var ui = DocumentApp.getUi();
   var paragraphs = body.getParagraphs();
   var tables = body.getTables();
-  
+
   var text = "";
-  paragraphs.forEach(function(par) {
+  paragraphs.forEach(function (par) {
     text += par.getText() + " ";
   });
-  
-  tables.forEach(function(table) {
+
+  tables.forEach(function (table) {
     tableText = table.getText();
     tableText = tableText.split("\n").join("");
     text = text.replace(tableText, "");
   });
-  
+
   //Lix Beregning
   var words = text.match(/\w+/g);
   var periods = text.match(/\./g);
   var lwords = text.match(/\w{6,}/g);
-  
+
   var A = words.length;
   var B = periods.length;
   var C = lwords.length;
-  
-  var lix = Math.round(A/B+(C*100)/A)
-  
+
+  var lix = Math.round(A / B + (C * 100) / A)
+
   //Visning
   var style = '<style>p{font-family:"Google Sans",Roboto,RobotoDraft,Helvetica,Arial,sans-serif}</style>';
   var info = "";
-  if (lix <=24) {
+  if (lix <= 24) {
     info = "24 og under: <b>Let, fx. børnebøger</b>";
   } else if (lix <= 25 && lix >= 34) {
     info = "25 til 34: <b>Mellem let- og middel, fx. ugebladslitteratur og skønlitteratur.</b>";
