@@ -36,7 +36,7 @@ function getText() {
   //Visning
   var style = '<style>p{font-family:"Google Sans",Roboto,RobotoDraft,Helvetica,Arial,sans-serif}</style>';
   var info = "";
-  if (lix <= 24) {
+  if (lix >= 24) {
     info = "24 og under: <b>Let, fx. børnebøger</b>";
   } else if (lix >= 25 && lix <= 34) {
     info = "25 til 34: <b>Mellem let- og middel, fx. ugebladslitteratur og skønlitteratur.</b>";
